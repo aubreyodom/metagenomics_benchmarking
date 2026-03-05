@@ -1,0 +1,342 @@
+scc-tk4
+=== Memory Info ===
+              total        used        free      shared  buff/cache   available
+Mem:          251Gi        67Gi        39Gi        24Mi       144Gi       182Gi
+Swap:         8.0Gi       2.5Gi       5.5Gi
+===================
+20
+Task ID: 8
+Data Directory: 
+Sample Name: healthy_stool_10_50
+Sample Type: mess_sample_100k_err
+R1 Read Path: /restricted/projectnb/pathoscope/work/Yaoan/metagenomics_benchmarking/MeSS_out/fastq/mess_sample_100k_err/healthy_stool_10_50_R1.fq.gz
+R2 Read Path: /restricted/projectnb/pathoscope/work/Yaoan/metagenomics_benchmarking/MeSS_out/fastq/mess_sample_100k_err/healthy_stool_10_50_R2.fq.gz
+Rows: 10 Columns: 2
+-- Column specification --------------------------------------------------------
+Delimiter: ","
+chr (1): species
+dbl (1): tax_abundance
+
+i Use `spec()` to retrieve the full column specification for this data.
+i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Attempting to perform Bowtie2 alignment on target_reference_2 index
+[1] "Samtools found on system. Using samtools to create bam file"
+arguments 'show.output.on.console', 'minimized' and 'invisible' are for Windows only
+99974 reads; of these:
+  99974 (100.00%) were paired; of these:
+    46701 (46.71%) aligned concordantly 0 times
+    25400 (25.41%) aligned concordantly exactly 1 time
+    27873 (27.88%) aligned concordantly >1 times
+    ----
+    46701 pairs aligned concordantly 0 times; of these:
+      21104 (45.19%) aligned discordantly 1 time
+    ----
+    25597 pairs aligned 0 times concordantly or discordantly; of these:
+      51194 mates make up the pairs; of these:
+        0 (0.00%) aligned 0 times
+        17134 (33.47%) aligned exactly 1 time
+        34060 (66.53%) aligned >1 times
+100.00% overall alignment rate
+Filtering unmapped reads
+Library alignment complete
+DONE! Alignments written to /scratch/3087146.8.linga/mess_sample_100k_err_tmp/healthy_stool_10_50.bam
+TARGET STEP COMPLETE
+Writing Intermediate FASTQ file to /scratch/3087146.8.linga/mess_sample_100k_err_tmp/intermediate.fastq.gz
+
+  |                                                                            
+  |                                                                      |   0%
+  |                                                                            
+  |======================================================================| 100%
+Intermediate FASTQ file written to/scratch/3087146.8.linga/mess_sample_100k_err_tmp/intermediate.fastq.gz
+Attempting to perform Bowtie2 alignment on filter_reference index
+[1] "Samtools found on system. Using samtools to create bam file"
+arguments 'show.output.on.console', 'minimized' and 'invisible' are for Windows only
+1 reads; of these:
+  1 (100.00%) were unpaired; of these:
+    1 (100.00%) aligned 0 times
+    0 (0.00%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+0.00% overall alignment rate
+Removing reads mapped to host indices
+DONE! Alignments written to /scratch/3087146.8.linga/mess_sample_100k_err_tmp//healthy_stool_10_50.filtered.bam
+FILTER STEP COMPLETE
+running id step
+Reading .bam file: /scratch/3087146.8.linga/mess_sample_100k_err_tmp//healthy_stool_10_50.filtered.bam
+Setting up the EM algorithm
+	Found 3086 unique taxa
+Starting EM iterations
+1 24022.8130546528
+2 1.58247755638775
+3 0.776931371665426
+4 0.617804882989546
+5 0.555834534297056
+6 0.454297421595838
+7 0.416657480948485
+8 0.217233501198401
+9 0.136728433502609
+10 0.131303458161175
+11 0.146820637807659
+12 0.163545972892292
+13 0.228021750318255
+14 0.36597027740505
+15 0.5218584569762
+16 0.572777355698768
+17 0.388542792168337
+18 0.232059964124549
+19 0.264088840514493
+20 0.36776126594865
+21 0.400072350074403
+22 0.289324267518339
+23 0.301697149998434
+24 0.25151274120426
+25 0.371484468631858
+26 0.52336094872035
+27 0.57252529987313
+28 0.456218629586179
+29 0.634507450557408
+30 0.647659929404059
+31 0.339246445998374
+32 0.0720132970462217
+33 0.0523866855321648
+34 0.0372219501824579
+35 0.0259842206750599
+36 0.0179085072469612
+37 0.01223130132694
+38 0.00830132349150395
+39 0.00560970124623434
+40 0.00377962941503191
+41 0.00254149531778641
+42 0.00170664239894854
+43 0.00114498717533714
+44 0.00076770286149595
+45 0.000514526131047279
+46 0.000344748310203356
+47 0.000230949327042007
+48 0.000154695450228402
+49 0.000103610171433189
+50 6.9390998416792e-05
+DONE! Converged in 50 iterations.
+Found reads for 25 genomes
+Results written to /restricted/projectnb/pathoscope/work/Yaoan/metagenomics_benchmarking/profilers/MetaScope_blast/rerun/mess_sample_100k_err/healthy_stool_10_50/healthy_stool_10_50.metascope_id.csv
+No coverage plots created
+running MetaBlast
+Sorting bam file to /scratch/3087146.8.linga/mess_sample_100k_err_tmp//healthy_stool_10_50_sorted.bam
+Generating fasta sequences from bam file
+BLASTN executable found on system.
+Running BLASTN on all sequences
+Running BLAST metrics on all blast results
+Results written to /restricted/projectnb/pathoscope/work/Yaoan/metagenomics_benchmarking/profilers/MetaScope_blast/rerun/mess_sample_100k_err/healthy_stool_10_50/healthy_stool_10_50.metascope_blast.csv
+   TaxonomyID                                       Genome read_count
+1      435590                         Phocaeicola vulgatus      23700
+2      537011                              Segatella copri      23683
+3         820                        Bacteroides uniformis      16537
+4         853                 Faecalibacterium prausnitzii      15622
+5       40518                          Ruminococcus bromii       5138
+6       39491                        Agathobacter rectalis       4442
+7      357276                            Phocaeicola dorei       2800
+8      411903                      Collinsella aerofaciens       2741
+9      445970                         Alistipes putredinis       2666
+10     367928                 Bifidobacterium adolescentis       2550
+11    2447885                         Bacteroides faecalis         36
+12     371601                    Bacteroides xylanisolvens         19
+13        823                   Parabacteroides distasonis          9
+14    2949651                 Parabacteroides sp. TA-V-105          6
+15     762982                   Paraprevotella xylaniphila          6
+16    2786956                         Phocaeicola faecalis          4
+17    2650157                   Bacteroides zhangwenhongii          3
+18     796942                        Stomatobaculum longum          2
+19    2881276                Fusicatenibacter faecihominis          2
+20    3230259   Lachnospira hominis (ex Hitch et al. 2024)          2
+21          0 unknown genome; accession ID isNZ_CP182814.1          2
+22     449673                        Bacteroides stercoris          1
+23     566552                  Bifidobacterium catenulatum          1
+24    2763025                           Bacteroides parvus          1
+25      46503                       Parabacteroides merdae          1
+     Proportion readsEM EMProportion domain         phylum          class
+1  2.370616e-01 23023.1 2.302910e-01      0   Bacteroidota    Bacteroidia
+2  2.368916e-01 23682.9 2.368911e-01      0   Bacteroidota    Bacteroidia
+3  1.654130e-01 16904.7 1.690909e-01      0   Bacteroidota    Bacteroidia
+4  1.562606e-01 15612.9 1.561696e-01      0      Bacillota     Clostridia
+5  5.139336e-02  5138.6 5.139934e-02      0      Bacillota     Clostridia
+6  4.443155e-02  4450.5 4.451656e-02      0      Bacillota     Clostridia
+7  2.800728e-02  3098.2 3.099032e-02      0   Bacteroidota    Bacteroidia
+8  2.741713e-02  2741.0 2.741713e-02      0 Actinomycetota Coriobacteriia
+9  2.666693e-02  2677.0 2.677714e-02      0   Bacteroidota    Bacteroidia
+10 2.550663e-02  2550.0 2.550663e-02      0 Actinomycetota  Actinomycetes
+11 3.600936e-04    31.9 3.191499e-04      0   Bacteroidota    Bacteroidia
+12 1.900494e-04    20.9 2.094999e-04      0   Bacteroidota    Bacteroidia
+13 9.002341e-05     8.3 8.272477e-05      0   Bacteroidota    Bacteroidia
+14 6.001560e-05     7.9 7.895560e-05      0   Bacteroidota    Bacteroidia
+15 6.001560e-05     5.9 5.853957e-05      0   Bacteroidota    Bacteroidia
+16 4.001040e-05     3.8 3.758454e-05      0   Bacteroidota    Bacteroidia
+17 3.000780e-05     2.6 2.600055e-05      0   Bacteroidota    Bacteroidia
+18 2.000520e-05     2.0 2.000510e-05      0      Bacillota     Clostridia
+19 2.000520e-05     2.0 2.000520e-05      0      Bacillota     Clostridia
+20 2.000520e-05     2.0 2.000517e-05      0      Bacillota     Clostridia
+21 2.000520e-05     2.7 2.660388e-05      0              0              0
+22 1.000260e-05     1.7 1.657929e-05      0   Bacteroidota    Bacteroidia
+23 1.000260e-05     1.0 1.000260e-05      0 Actinomycetota  Actinomycetes
+24 1.000260e-05     1.3 1.347386e-05      0   Bacteroidota    Bacteroidia
+25 1.000260e-05     1.1 1.111805e-05      0   Bacteroidota    Bacteroidia
+               order             family            genus
+1      Bacteroidales     Bacteroidaceae      Phocaeicola
+2      Bacteroidales     Prevotellaceae        Segatella
+3      Bacteroidales     Bacteroidaceae      Bacteroides
+4      Eubacteriales   Oscillospiraceae Faecalibacterium
+5      Eubacteriales   Oscillospiraceae     Ruminococcus
+6     Lachnospirales    Lachnospiraceae     Agathobacter
+7      Bacteroidales     Bacteroidaceae      Phocaeicola
+8   Coriobacteriales  Coriobacteriaceae      Collinsella
+9      Bacteroidales      Rikenellaceae        Alistipes
+10 Bifidobacteriales Bifidobacteriaceae  Bifidobacterium
+11     Bacteroidales     Bacteroidaceae      Bacteroides
+12     Bacteroidales     Bacteroidaceae      Bacteroides
+13     Bacteroidales     Tannerellaceae  Parabacteroides
+14     Bacteroidales     Tannerellaceae  Parabacteroides
+15     Bacteroidales     Prevotellaceae   Paraprevotella
+16     Bacteroidales     Bacteroidaceae      Phocaeicola
+17     Bacteroidales     Bacteroidaceae      Bacteroides
+18    Lachnospirales    Lachnospiraceae   Stomatobaculum
+19    Lachnospirales    Lachnospiraceae Fusicatenibacter
+20    Lachnospirales    Lachnospiraceae      Lachnospira
+21                 0                  0                0
+22     Bacteroidales     Bacteroidaceae      Bacteroides
+23 Bifidobacteriales Bifidobacteriaceae  Bifidobacterium
+24     Bacteroidales     Bacteroidaceae      Bacteroides
+25     Bacteroidales     Tannerellaceae  Parabacteroides
+                                      species   best_hit_genus genus_counts
+1                        Phocaeicola vulgatus      Phocaeicola           32
+2                             Segatella copri        Segatella            1
+3                       Bacteroides uniformis      Bacteroides           29
+4                Faecalibacterium prausnitzii Faecalibacterium           18
+5                         Ruminococcus bromii Faecalibacterium            1
+6                       Agathobacter rectalis        Roseburia            1
+7                           Phocaeicola dorei      Phocaeicola           33
+8                     Collinsella aerofaciens      Collinsella            3
+9                        Alistipes putredinis        Alistipes            1
+10               Bifidobacterium adolescentis  Bifidobacterium           30
+11                       Bacteroides faecalis      Bacteroides            1
+12                  Bacteroides xylanisolvens      Bacteroides            1
+13                 Parabacteroides distasonis      Phocaeicola            6
+14               Parabacteroides sp. TA-V-105      Bacteroides            1
+15                 Paraprevotella xylaniphila      Phocaeicola            1
+16                       Phocaeicola faecalis      Phocaeicola            4
+17                 Bacteroides zhangwenhongii      Bacteroides            2
+18                      Stomatobaculum longum Faecalibacterium            1
+19              Fusicatenibacter faecihominis            Dorea            1
+20 Lachnospira hominis (ex Hitch et al. 2024)            Dorea            1
+21                                          0      Phocaeicola            2
+22                      Bacteroides stercoris      Phocaeicola            1
+23                Bifidobacterium catenulatum  Bifidobacterium            1
+24                         Bacteroides parvus      Bacteroides            1
+25                     Parabacteroides merdae      Phocaeicola            1
+               best_hit_species species_counts uniqueness_score
+1          Phocaeicola vulgatus             22                2
+2          Phocaeicola vulgatus              1                1
+3         Bacteroides uniformis              1                1
+4  Faecalibacterium prausnitzii              4                1
+5          uncultured bacterium              1                1
+6  uncultured human fecal virus              1                1
+7             Phocaeicola dorei             28                1
+8       Collinsella aerofaciens              1                1
+9                     bacterium              1                1
+10 Bifidobacterium adolescentis             37                1
+11         Bacteroides fragilis              1                1
+12            Phocaeicola dorei              4                1
+13            Phocaeicola dorei              6                1
+14            Phocaeicola dorei              3                1
+15            Phocaeicola dorei              5                1
+16            Phocaeicola dorei              4                1
+17         Bacteroides fragilis              1                1
+18 Faecalibacterium prausnitzii              1                1
+19            Dorea longicatena              1                1
+20            Dorea longicatena              1                2
+21            Phocaeicola dorei              2                1
+22            Phocaeicola dorei              1                1
+23       Bifidobacterium longum              1                1
+24        Bacteroides uniformis              1                1
+25            Phocaeicola dorei              1                1
+   species_percentage_hit genus_percentage_hit species_contaminant_score
+1                       0                    0                         0
+2                       0                    0                         0
+3                       0                    0                         0
+4                       0                    0                         0
+5                       0                    0                         0
+6                       0                    0                         0
+7                       0                    0                         0
+8                       0                    0                         0
+9                       0                    0                         0
+10                      0                    0                         0
+11                      0                    0                         0
+12                      0                    0                         0
+13                      0                    0                         0
+14                      0                    0                         0
+15                      0                    0                         0
+16                      0                    0                         0
+17                      0                    0                         0
+18                      0                    0                         0
+19                      0                    0                         0
+20                      0                    0                         0
+21                      0                    0                         0
+22                      0                    0                         0
+23                      0                    0                         0
+24                      0                    0                         0
+25                      0                    0                         0
+   genus_contaminant_score
+1                        0
+2                        0
+3                        0
+4                        0
+5                        0
+6                        0
+7                        0
+8                        0
+9                        0
+10                       0
+11                       0
+12                       0
+13                       0
+14                       0
+15                       0
+16                       0
+17                       0
+18                       0
+19                       0
+20                       0
+21                       0
+22                       0
+23                       0
+24                       0
+25                       0
+Warning message:
+In taxonomizr::getTaxonomy(unique(blast_result_metrics_df$metascope_taxid),  :
+  NAs introduced by coercion
+MetaBlast COMPLETE
+Running blast reassignment
+Results written to /restricted/projectnb/pathoscope/work/Yaoan/metagenomics_benchmarking/profilers/MetaScope_blast/rerun/mess_sample_100k_err/healthy_stool_10_50/healthy_stool_10_50.metascope_blast_reassigned.csv
+# A tibble: 25 x 23
+   TaxonomyID Genome    read_count Proportion readsEM EMProportion domain phylum
+        <int> <chr>          <int>      <dbl>   <dbl>        <dbl>  <int> <chr> 
+ 1     435590 Phocaeic~      23700     0.237   23023.       0.230       0 Bacte~
+ 2     537011 Segatell~      23683     0.237   23683.       0.237       0 Bacte~
+ 3        820 Bacteroi~      16537     0.165   16905.       0.169       0 Bacte~
+ 4        853 Faecalib~      15622     0.156   15613.       0.156       0 Bacil~
+ 5      40518 Ruminoco~       5138     0.0514   5139.       0.0514      0 Bacil~
+ 6      39491 Agathoba~       4442     0.0444   4450.       0.0445      0 Bacil~
+ 7     357276 Phocaeic~       2800     0.0280   3098.       0.0310      0 Bacte~
+ 8     411903 Collinse~       2741     0.0274   2741        0.0274      0 Actin~
+ 9     445970 Alistipe~       2666     0.0267   2677        0.0268      0 Bacte~
+10     367928 Bifidoba~       2550     0.0255   2550        0.0255      0 Actin~
+# i 15 more rows
+# i 15 more variables: class <chr>, order <chr>, family <chr>, genus <chr>,
+#   species <chr>, best_hit_genus <chr>, genus_counts <int>,
+#   best_hit_species <chr>, species_counts <int>, uniqueness_score <int>,
+#   species_percentage_hit <int>, genus_percentage_hit <int>,
+#   species_contaminant_score <int>, genus_contaminant_score <int>,
+#   blast_validated <lgl>
+BLAST REASSIGNMENT COMPLETE
+Time difference of 25.42695 mins
+
+real	25m27.778s
+user	20m59.053s
+sys	5m59.980s

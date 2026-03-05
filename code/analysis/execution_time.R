@@ -1,19 +1,32 @@
 # This file is for generating execution time plots
 
-## Bracken MISSING
+library(tidyverse)
 
-## Centrifuge
-## More files than there are results, also why are there multiple execution times
-# In no error folders, the correct files are the _noerr
-ctf_time <- list.files("profilers/Centrifuge/outputs", 
-                       pattern = "timing.txt", recursive = TRUE,
-                       full.names = TRUE)
+convert_to_secs <- function(timing_string) {
+  mins <- as.numeric(sub(".*\\t(\\d+)m.*", "\\1", timing_string))
+  secs <- as.numeric(sub(".*m([0-9.]+)s", "\\1", sys_timings))
+  return(mins*60 + secs)
+}
 
+read_timings_file <- function(timings_path) {
+  pipeline = sub("_.*", "", basename(dirname(timings_path)))
+  sample_number = as.numeric(sub(".*_(\\d+)\\.qlog$", "\\1", timings_path))
+  
+  full_timings<- readLines(timings_path) #usr + sys
+  user_timings <- grep("^(user)\\t", full_timings, value = TRUE)
+  sys_timings <- grep("^(sys)\\t", full_timings, value = TRUE)
+  
+  total_secs <- convert_to_secs(user_timings) + convert_to_secs(sys_timings)
+  
+  return(data.frame(pipeline = pipeline, 
+                    sample_number = sample_number, 
+                    total_secs = total_secs))
+}
 
-krk2_time <- list.files("profilers/Kraken2/outputs", 
-                       pattern = "timing.txt", recursive = TRUE,
-                       full.names = TRUE)
+all_timings_paths <- list.files("timings", pattern = ".qlog", recursive = TRUE, 
+                                full.names = TRUE)
 
-ps <- list.files("profilers/PathoScope2/outputs", 
-                 pattern = "timing.txt", recursive = TRUE,
-                 full.names = TRUE)
+all_timings <- purrr::map_dfr(all_timings_paths, read_timings_file)
+
+ggplot(all_timings, aes(x = sample_number, y = total_secs, color = pipeline)) + 
+  geom_point()

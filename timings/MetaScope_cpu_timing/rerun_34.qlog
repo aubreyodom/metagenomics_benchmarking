@@ -1,0 +1,253 @@
+scc-tm2
+=== Memory Info ===
+              total        used        free      shared  buff/cache   available
+Mem:          251Gi        10Gi       102Gi        40Mi       138Gi       239Gi
+Swap:         8.0Gi        96Mi       7.9Gi
+===================
+20
+Task ID: 34
+Sample Name: healthy_stool_100_10
+Sample Type: mess_sample_1mil_err
+R1 Read Path: /restricted/projectnb/pathoscope/work/Yaoan/metagenomics_benchmarking/MeSS_out/fastq/mess_sample_1mil_err/healthy_stool_100_10_R1.fq.gz
+R2 Read Path: /restricted/projectnb/pathoscope/work/Yaoan/metagenomics_benchmarking/MeSS_out/fastq/mess_sample_1mil_err/healthy_stool_100_10_R2.fq.gz
+Attempting to perform Bowtie2 alignment on target_reference_2 index
+[1] "Samtools found on system. Using samtools to create bam file"
+arguments 'show.output.on.console', 'minimized' and 'invisible' are for Windows only
+999262 reads; of these:
+  999262 (100.00%) were paired; of these:
+    532290 (53.27%) aligned concordantly 0 times
+    318960 (31.92%) aligned concordantly exactly 1 time
+    148012 (14.81%) aligned concordantly >1 times
+    ----
+    532290 pairs aligned concordantly 0 times; of these:
+      294950 (55.41%) aligned discordantly 1 time
+    ----
+    237340 pairs aligned 0 times concordantly or discordantly; of these:
+      474680 mates make up the pairs; of these:
+        2699 (0.57%) aligned 0 times
+        154279 (32.50%) aligned exactly 1 time
+        317702 (66.93%) aligned >1 times
+99.86% overall alignment rate
+Filtering unmapped reads
+[bam_sort_core] merging from 2 files and 1 in-memory blocks...
+Library alignment complete
+DONE! Alignments written to /scratch/3440355.34.linga/healthy_stool_100_10_tmp/healthy_stool_100_10.bam
+TARGET STEP COMPLETE
+Writing Intermediate FASTQ file to /scratch/3440355.34.linga/healthy_stool_100_10_tmp/intermediate.fastq.gz
+
+  |                                                                            
+  |                                                                      |   0%
+  |                                                                            
+  |======================================================================| 100%
+Intermediate FASTQ file written to/scratch/3440355.34.linga/healthy_stool_100_10_tmp/intermediate.fastq.gz
+Attempting to perform Bowtie2 alignment on filter_reference index
+[1] "Samtools found on system. Using samtools to create bam file"
+arguments 'show.output.on.console', 'minimized' and 'invisible' are for Windows only
+1 reads; of these:
+  1 (100.00%) were unpaired; of these:
+    1 (100.00%) aligned 0 times
+    0 (0.00%) aligned exactly 1 time
+    0 (0.00%) aligned >1 times
+0.00% overall alignment rate
+Removing reads mapped to host indices
+
+  |                                                                            
+  |                                                                      |   0%
+  |                                                                            
+  |==                                                                    |   3%
+  |                                                                            
+  |====                                                                  |   5%
+  |                                                                            
+  |=====                                                                 |   8%
+  |                                                                            
+  |=======                                                               |  10%
+  |                                                                            
+  |=========                                                             |  13%
+  |                                                                            
+  |===========                                                           |  15%
+  |                                                                            
+  |============                                                          |  18%
+  |                                                                            
+  |==============                                                        |  20%
+  |                                                                            
+  |================                                                      |  23%
+  |                                                                            
+  |==================                                                    |  25%
+  |                                                                            
+  |====================                                                  |  28%
+  |                                                                            
+  |=====================                                                 |  30%
+  |                                                                            
+  |=======================                                               |  33%
+  |                                                                            
+  |=========================                                             |  36%
+  |                                                                            
+  |===========================                                           |  38%
+  |                                                                            
+  |============================                                          |  41%
+  |                                                                            
+  |==============================                                        |  43%
+  |                                                                            
+  |================================                                      |  46%
+  |                                                                            
+  |==================================                                    |  48%
+  |                                                                            
+  |====================================                                  |  51%
+  |                                                                            
+  |=====================================                                 |  53%
+  |                                                                            
+  |=======================================                               |  56%
+  |                                                                            
+  |=========================================                             |  58%
+  |                                                                            
+  |===========================================                           |  61%
+  |                                                                            
+  |============================================                          |  63%
+  |                                                                            
+  |==============================================                        |  66%
+  |                                                                            
+  |================================================                      |  69%
+  |                                                                            
+  |==================================================                    |  71%
+  |                                                                            
+  |====================================================                  |  74%
+  |                                                                            
+  |=====================================================                 |  76%
+  |                                                                            
+  |=======================================================               |  79%
+  |                                                                            
+  |=========================================================             |  81%
+  |                                                                            
+  |===========================================================           |  84%
+  |                                                                            
+  |============================================================          |  86%
+  |                                                                            
+  |==============================================================        |  89%
+  |                                                                            
+  |================================================================      |  91%
+  |                                                                            
+  |==================================================================    |  94%
+  |                                                                            
+  |====================================================================  |  96%
+  |                                                                            
+  |===================================================================== |  99%
+  |                                                                            
+  |======================================================================| 100%
+DONE! Alignments written to /scratch/3440355.34.linga/healthy_stool_100_10_tmp//healthy_stool_100_10.filtered.csv.gz
+FILTER STEP COMPLETE
+running id step
+Note, cannot generate updated_bam from csv.gz file
+Reading .csv.gz file: /scratch/3440355.34.linga/healthy_stool_100_10_tmp//healthy_stool_100_10.filtered.csv.gz
+Setting up the EM algorithm
+	Found 15263 unique taxa
+Starting EM iterations
+1 47025.8749820737
+2 0.999290507126716
+3 1.03861697809334
+4 0.998180702849921
+5 0.996369481308112
+6 0.982061048504102
+7 0.981262874135892
+8 0.920100509153433
+9 0.721435146534016
+10 0.848044244401646
+11 0.98022189890492
+12 0.989500170311959
+13 0.765156198332635
+14 0.775296010159127
+15 0.767074195872595
+16 0.710531958192299
+17 0.786884815209521
+18 0.7066111473165
+19 0.597548234851081
+20 0.717042814629154
+21 0.668173844778835
+22 0.399945028712967
+23 0.244559803666216
+24 0.336066585924936
+25 0.453465759747107
+26 0.571655738419649
+27 0.645173191749815
+28 0.632501488969971
+29 0.492817922560931
+30 0.325397805284019
+31 0.275691318301226
+32 0.210383416331539
+33 0.144465780291734
+34 0.0905894937953888
+35 0.0531325715816681
+36 0.0298379344682553
+37 0.0163268882915849
+38 0.0088033832883577
+39 0.00538591043230431
+40 0.00447801484673037
+41 0.00371835359152732
+42 0.00383012368265941
+43 0.00526467856508543
+44 0.00722690638293661
+45 0.00990247232607806
+46 0.0135351199374491
+47 0.0184387186304297
+48 0.0250065855205062
+49 0.0337128031890627
+50 0.0450972403896732
+51 0.0597235598473423
+52 0.0781005949043165
+53 0.100566773428004
+54 0.127158574012179
+55 0.157513571152839
+56 0.19087841788077
+57 0.226275760185068
+58 0.262824055800673
+59 0.300137452996819
+60 0.338720878882955
+61 0.380345631555802
+62 0.428508692154497
+63 0.489167642228967
+64 0.57175097377585
+65 0.688313570028089
+66 0.8344653165484
+67 0.883494795763116
+68 0.70219019437516
+69 0.81053529121197
+70 0.706986213980978
+71 0.422997881128471
+72 0.120580968692413
+73 0.0223215544035007
+74 0.00371046675780825
+75 0.000607838092753426
+76 0.000583517967897871
+77 0.000560155436963775
+78 0.00053771401272152
+79 0.000516158502186114
+80 0.000495454968382424
+81 0.000475570692598891
+82 0.000456474137185691
+83 0.000438134908946519
+84 0.000420523723165123
+85 0.000403612368303087
+86 0.000387373671398514
+87 0.000371781464190906
+88 0.000356810549992243
+89 0.000342436671320474
+90 0.000328636478307238
+91 0.00031538749788858
+92 0.000302668103783973
+93 0.000290457487266043
+94 0.000278735628721087
+95 0.000267483269997835
+96 0.000256681887540223
+97 0.000246313666297645
+98 0.00023636147440509
+99 0.000226808838623705
+100 0.000217639920531242
+DONE! Converged in 100 iterations.
+Found reads for 169 genomes
+Results written to /restricted/projectnb/pathoscope/work/Yaoan/metagenomics_benchmarking/profilers/MetaScope/rerun/mess_sample_1mil_err/healthy_stool_100_10.metascope_id.csv
+No coverage plots created
+[1] "/restricted/projectnb/pathoscope/work/Yaoan/metagenomics_benchmarking/profilers/MetaScope/rerun/mess_sample_1mil_err/healthy_stool_100_10.metascope_id.csv"
+Time difference of 22.26435 mins
+
+real	22m18.772s
+user	49m11.800s
+sys	8m13.017s
