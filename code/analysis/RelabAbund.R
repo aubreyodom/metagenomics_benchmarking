@@ -137,7 +137,7 @@ ggsave("results/figures/relab_plot.png", p1, dpi = 600, units = "mm", width = 24
 
 
 
-write.csv(summary_df_ground_truth, "code/analysis/summary_df.csv", row.names = FALSE)
+#write.csv(summary_df_ground_truth, "code/analysis/summary_df.csv", row.names = FALSE)
 
 
 

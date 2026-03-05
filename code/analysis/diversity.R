@@ -123,9 +123,20 @@ alpha_plots[[3]][3]
 
 
 ################################################################################
+split_list <- summary_df_filtered |>
+  group_by(pipeline) |>
+  group_split()
+
+group_names <- summary_df_filtered |>
+  group_by(pipeline) |>
+  group_keys() |>
+  pull(pipeline)
+
+names(split_list) <- group_names
+
 shannon_list <- lapply(split_list, function(x) calculate_diversity(x, index = "shannon"))
 
-shannon_diff <- lapply(shannon_list, function(v) v - shannon_list[[3]][names(v)])
+shannon_diff <- lapply(shannon_list, function(v) v - shannon_list[[1]][names(v)])
 
 shannon_diff_df <- enframe(shannon_diff, name = "pipeline", value = "differences") |>
   unnest_longer(differences, values_to = "difference", indices_to = "difference_id") |>
@@ -144,7 +155,7 @@ shannon_diff_df$pipeline <- factor(shannon_diff_df$pipeline,
 
 simpson_list <- lapply(split_list, function(x) calculate_diversity(x, index = "simpson"))
 
-simpson_diff <- lapply(simpson_list, function(v) v - simpson_list[[3]][names(v)])
+simpson_diff <- lapply(simpson_list, function(v) v - simpson_list[[1]][names(v)])
 
 simpson_diff_df <- enframe(simpson_diff, name = "pipeline", value = "differences") |>
   unnest_longer(differences, values_to = "difference", indices_to = "difference_id") |>
@@ -163,7 +174,7 @@ simpson_diff_df$pipeline <- factor(simpson_diff_df$pipeline,
 
 inv_list <- lapply(split_list, function(x) calculate_diversity(x, index = "inv"))
 
-inv_diff <- lapply(inv_list, function(v) v - inv_list[[3]][names(v)])
+inv_diff <- lapply(inv_list, function(v) v - inv_list[[1]][names(v)])
 
 inv_diff_df <- enframe(inv_diff, name = "pipeline", value = "differences") |>
   unnest_longer(differences, values_to = "difference", indices_to = "difference_id") |>
@@ -188,16 +199,24 @@ full_alpha_df <- rbind(shannon_diff_df, simpson_diff_df, inv_diff_df)
 full_alpha_df$alpha_metric <- factor(full_alpha_df$alpha_metric, 
                                      levels = c("Shannon", "Simpson", "Inverse simpson"))
 
-alpha_plot_full <- ggplot(full_alpha_df, aes(x = pipeline, y = difference, fill = pipeline)) +
+full_alpha_df$species_distribution <- factor(
+  full_alpha_df$species_distribution,
+  levels = c("1", "10", "50", "100"))
+  
+
+alpha_plot_full <- ggplot(full_alpha_df, aes(x = pipeline, y = difference)) +
   geom_violin(trim = FALSE, alpha = 0.5) +
-  geom_jitter(aes(shape = total_species, color = pipeline), alpha = 0.5) +
+  geom_jitter(aes(shape = species_distribution, color = total_species), alpha = 0.5) +
   facet_wrap(vars(alpha_metric), scales = "free_x") +
-  labs(y = "Difference from ground truth", x = "Pipeline",
-       title = paste(index, "— Distribution of deviations from ground truth")) + 
+  labs(y = "Distance from Ground Truth",
+       title = paste("Alpha Diversity Deviations from Ground Truth"), 
+       shape = "Species Distribution", 
+       color = "Total Species") + 
   coord_flip() +
   geom_hline(yintercept = 0)
 
-ggsave("results/figures/alpha_div_plot.png", alpha_plot_full, dpi = 600)
+ggsave("results/figures/alpha_div_plot.png", alpha_plot_full, dpi = 600, units = "in", 
+       width = 8, height = 6)
 
 ################################################################################
 # Beta Diversity
